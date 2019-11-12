@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>targetes_flexbox</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            min-height: 100%;
+        }
+        img{
+            width: 100%;
+        }
+        body{
+            font-family: "Georgia" cursive;
+            background: linear-gradient(38deg,red,purple);
+            font-size: 18px;
+            color: purple;
+        }
+        .container{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            padding: 2em 4em;
+        }
+        .dissenyador{
+            width: 25em;
+            margin: 1em;
+            border-radius: 20px;
+            box-shadow: 0 0 20px pink;
+            background: rgba(240,240,240,0.9);
+            display: flex;
+            flex-direction: column;
+        }
+        .dissenyador_img{
+            overflow: hidden;
+            border-radius: 20px 20px 0 0;
+            width: 100%;
+            height: 200px;
+            background: purple;
+        }
+        .dissenyador_img img{
+            border-radius: 20px 20px 0 0;
+            height: 100%;
+            filter: grayscale(100%);
+            overflow: hidden;
+            object-fit: cover;
+            mix-blend-mode: screen;
+        }
+        .dissenyador:first-child .dissenyador_img img{
+            object-position: center;
+        }
+        .dissenyador:last-child .dissenyador_img img{
+            object-position: top;
+        }
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: 1px solid purple;
+            margin: 0.5em 1em;
+        }
+        h3{
+            font-style: italic;
+            font-weight: bold;
+        }
+        span{
+            font-style: normal;
+            font-weight: lighter;
+            font-size: 0.9em;
+        }
+        .dissenyador_contingut{
+            text-align: justify;
+            hyphens: auto;
+            line-height: 1.4em;
+            font-size: 0.9em;
+            margin: 1em 1em 0.5em 1em;
+            flex-grow: 1;
+        }
+        footer{
+            background: purple;
+            color: white;
+            font-style: italic;
+            font-size: 0.9em;
+            border-radius: 0 0 20px 20px;
+            padding: 0.6em;
+        }
+        @media (max-width: 600px){
+            body{
+                font-size: 16px;
+            }
+            .container{
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="dissenyador">
+            <div class="dissenyador_img">
+                <img src="img/irma_boom.jpg"
+                alt="Chip Kidd">
+            </div>
+            <header>
+                <h3>Irma Boom</h3>
+                <span>1960</span>
+            </header>
+            <p class="dissenyador_contingut">
+                Irma Boom es una dissenyadora gràfica, tipògrafa e il·lustradora neerlandesa, especialista en la confecció de llibros d'artista, elaborats amb materials, formats o dissenys a sovint molt inusuals. Ha fet numerosos cursos i conferències relatius a la seua labor professional. En 2001 va guanyargar el Premi Gutenberg de Leipzig en reconeixement al conjunt de la seua carrera.
+            </p>
+            <footer class="dissenyador_peu">
+                La seua obra más ambiciosa i coneguda és el llibre SHV Think Book 1996-1896. Va treballar durant cinc anys en el disseny i l'edició d'aquest llibre encarregat per SHV Holdings de Utrecht per a celebrar el primer centenari de la fundació de la empresa.
+            </footer>
+        </div>
+        <div class="dissenyador">
+            <div class="dissenyador_img">
+                <img src="img/pepe_gimeno_crespo.jpg"
+                alt="Pepe Gimeno Crespo">
+            </div>
+            <header>
+                <h3>Pepe Gimeno Crespo</h3>
+                <span>1951</span>
+            </header>
+            <p class="dissenyador_contingut">
+                Pepe Gimeno Crespo és un dissenyador gràfic i tipogràfic valencià autor de la marca gràfica de la Presidència Espanyola de la Unió Europea 2002 i de la tipografia «FF Pepe». Entre els seus clients figuren empreses com Roca, Lladró o la Fundació Bancaixa i compta amb obra en la col·lecció del IVAM i en la de Merrill C. Berman a Nova York. En l'actualitat dirigeix l'estudi valencià «Pepe Gimeno - Proyecto Gráfico».
+            </p>
+            <footer class="dissenyador_peu">
+                En 2001 guanya el concurs per a la realització de la marca de la Presidència Espanyola de la Unió Europea 2002 i la seua tipografia «FF Pepe», rep el Certificat d'Excel·lència en Disseny Tipogràfic del TDC.
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
